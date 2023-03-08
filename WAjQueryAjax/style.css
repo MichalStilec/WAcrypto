@@ -1,0 +1,26 @@
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+button {
+    width: 10%;
+    height: 7%;
+    background-color: rgb(187, 255, 238);
+}
+
+body {
+    background-color: rgb(210, 236, 171);
+}
+
+
+table, th, td {
+    border:1px solid black;
+}
+
+th, td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
