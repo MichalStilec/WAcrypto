@@ -50,28 +50,88 @@ function setDogecoin() {
     });
 };
 
-$( document ).ready(function() {     
+function refresh() {    
+    setBitcoin();
+    setEthereum();
+    setCardano();
+    setDogecoin();
+};
+
+let bitcoinUpdate = 0;
+let ethereumUpdate = 0;
+let cardanoUpdate = 0;
+let dogecoinUpdate = 0;
+
+
+$( document ).ready(function() {    
+    console.log(bitcoinUpdate); 
+    console.log(ethereumUpdate); 
+    console.log(cardanoUpdate); 
+    console.log(dogecoinUpdate); 
     setBitcoin();
     setEthereum();
     setCardano();
     setDogecoin();
     setTimeout(function () {         
         location.reload(true);      
-     }, 10000);
+     }, 100000);
 });
+
+$('#refresh').click(function() {
+    refresh();
+}); 
+
 
 $('#bitcoin').click(function() {
-    setBitcoin();
-});
+    if (bitcoinUpdate != 3) {
+        setBitcoin();
+        bitcoinUpdate++;
+        console.log(bitcoinUpdate); 
+    } else {
+        console.log("pockej minutu");
+        setTimeout(function () {         
+            bitcoinUpdate = 0;     
+        }, 60000);
+    }
+}); 
 
 $('#ethereum').click(function() {
-    setEthereum();
-});
+    if (ethereumUpdate != 3) {
+        setEthereum();
+        ethereumUpdate++;
+        console.log(ethereumUpdate); 
+    } else {
+        console.log("pockej minutu");
+        setTimeout(function () {         
+            ethereumUpdate = 0;     
+        }, 60000);
+    }
+}); 
 
 $('#cardano').click(function() {
-    setCardano();
-});
+    if (cardanoUpdate != 3) {
+        setCardano();
+        cardanoUpdate++;
+        console.log(cardanoUpdate); 
+    } else {
+        console.log("pockej minutu");
+        setTimeout(function () {         
+            cardanoUpdate = 0;     
+        }, 60000);
+    }
+}); 
 
 $('#dogecoin').click(function() {
-    setDogecoin();
-});
+    if (dogecoinUpdate != 3) {
+        setDogecoin();
+        dogecoinUpdate++;
+        console.log(dogecoinUpdate); 
+    } else {
+        console.log("pockej minutu");
+        setTimeout(function () {         
+            dogecoinUpdate = 0;     
+        }, 60000);
+    }
+}); 
+
+ 
